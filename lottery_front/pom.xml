@@ -5,7 +5,7 @@
 		<groupId>com.npc</groupId>
 		<artifactId>lottery</artifactId>
 		<version>1.0</version>
-		<relativePath>../../parent/pom.xml</relativePath>
+		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<name>lotteryFront</name>
