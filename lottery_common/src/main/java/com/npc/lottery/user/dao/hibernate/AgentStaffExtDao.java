@@ -27,7 +27,7 @@ public class AgentStaffExtDao extends HibernateDao<AgentStaffExt, Long> implemen
 					"where MANAGER_STAFF_ID=?";	
 		AgentStaffExt agent=null;
 		try {
-			agent=jdbcTemplate.queryForObject(sql, new Object[]{userId}, new AgentUserRowMapper());
+			agent=(AgentStaffExt) jdbcTemplate.queryForObject(sql, new Object[]{userId}, new AgentUserRowMapper());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

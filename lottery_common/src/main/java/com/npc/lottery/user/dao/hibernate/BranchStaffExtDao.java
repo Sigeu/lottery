@@ -27,7 +27,7 @@ public class BranchStaffExtDao extends HibernateDao<BranchStaffExt, Long> implem
 		}
 		String sql="select MANAGER_STAFF_ID,PARENT_STAFF,REPLENISHMENT,CHIEF_RATE,COMPANY_RATE,TOTAL_CREDIT_LINE,AVAILABLE_CREDIT_LINE,"+
 				" OPENREPORT,LEFTOWNER,DEFAULT_COMMISSION from "+scheme+"TB_BRANCH_STAFF_EXT where MANAGER_STAFF_ID=?";
-		BranchStaffExt branch=jdbcTemplate.queryForObject(sql, new Object[]{id},new BranchUserRowMapper());
+		BranchStaffExt branch=(BranchStaffExt) jdbcTemplate.queryForObject(sql, new Object[]{id},new BranchUserRowMapper());
 		return branch;
 	}
 	

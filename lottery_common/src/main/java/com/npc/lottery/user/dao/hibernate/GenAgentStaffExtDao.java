@@ -24,7 +24,7 @@ public class GenAgentStaffExtDao extends HibernateDao<GenAgentStaffExt, Long> im
 		}
 		String sql="select MANAGER_STAFF_ID,PARENT_STAFF,REPLENISHMENT,GEN_AGENT_RATE,PURE_ACCOUNTED,SHAREHOLDER_RATE,TOTAL_CREDIT_LINE, "+
 				"AVAILABLE_CREDIT_LINE,CHIEF_STAFF,BRANCH_STAFF,RATE_RESTRICT,BELOW_RATE_LIMIT from "+scheme+"TB_GEN_AGENT_STAFF_EXT where MANAGER_STAFF_ID=?";
-		GenAgentStaffExt genAgent=jdbcTemplate.queryForObject(sql, new Object[]{id}, new GenAgentUserRowMapper());	
+		GenAgentStaffExt genAgent=(GenAgentStaffExt) jdbcTemplate.queryForObject(sql, new Object[]{id}, new GenAgentUserRowMapper());	
 		return genAgent;
 	}
 

@@ -94,7 +94,7 @@ public class UserCommissionDao extends HibernateDao<UserCommission, Long> implem
 	    "BETTING_QUOTAS,ITEM_QUOTAS,CREATE_USER,CREATE_TIME,MODIFY_TIME,CHIEF_ID from "+scheme+"tb_user_commission uc "+
 	    "inner join TB_PLAY_TYPE pt on pt.COMMISSION_TYPE=uc.PLAY_FINAL_TYPE " +
 	    "where USER_ID=? and USER_TYPE=? and  pt.TYPE_CODE= ? ";
-	    UserCommission userCommission=jdbcTemplate.queryForObject(sql, values, new UserCommissionMapper());
+	    UserCommission userCommission=(UserCommission) jdbcTemplate.queryForObject(sql, values, new UserCommissionMapper());
 	    return userCommission;
 	}
 	

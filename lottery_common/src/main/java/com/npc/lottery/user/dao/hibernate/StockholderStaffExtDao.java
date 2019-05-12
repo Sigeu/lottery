@@ -26,7 +26,7 @@ public class StockholderStaffExtDao extends HibernateDao<StockholderStaffExt, Lo
 		}
 		String sql="select MANAGER_STAFF_ID,PARENT_STAFF,REPLENISHMENT,BRANCH_RATE,PURE_ACCOUNTED,SHAREHOLDER_RATE,TOTAL_CREDIT_LINE,AVAILABLE_CREDIT_LINE, "+
 					"CHIEF_STAFF,RATE_RESTRICT,BELOW_RATE_LIMIT from "+scheme+"TB_STOCKHOLDER_STAFF_EXT where MANAGER_STAFF_ID=?";
-		StockholderStaffExt stockholder=jdbcTemplate.queryForObject(sql,new Object[]{id},new StockholderUserRowMapper());
+		StockholderStaffExt stockholder=(StockholderStaffExt) jdbcTemplate.queryForObject(sql,new Object[]{id},new StockholderUserRowMapper());
 		return stockholder;
 	}
 	
