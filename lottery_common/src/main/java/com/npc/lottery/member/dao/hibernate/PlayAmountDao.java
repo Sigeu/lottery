@@ -35,7 +35,7 @@ public class PlayAmountDao extends HibernateDao<PlayAmount, Long> implements IPl
 		};
 		PlayAmount playAmount=null;
 		try {
-			playAmount=jdbcTemplate.queryForObject(sql, objs,new PlayAmountRowMapper());
+			playAmount=(PlayAmount) jdbcTemplate.queryForObject(sql, objs,new PlayAmountRowMapper());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
