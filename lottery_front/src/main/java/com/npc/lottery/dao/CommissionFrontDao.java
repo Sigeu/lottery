@@ -32,7 +32,7 @@ public class CommissionFrontDao {
 		Object[] parameter = new Object[] { chiefId, playFinalType };
 		UserCommissionDefault userCommissionDefault = null;
 		try {
-			userCommissionDefault = jdbcTemplate.queryForObject(sql, parameter, new UserCommissionDefaultMapper());
+			userCommissionDefault = (UserCommissionDefault) jdbcTemplate.queryForObject(sql, parameter, new UserCommissionDefaultMapper());
 		} catch (Exception ex) {
 			log.error(ex);
 		}
@@ -51,7 +51,7 @@ public class CommissionFrontDao {
 		Object[] parameter = new Object[] { userId, playFinalType };
 		UserCommission userCommission = null;
 		try {
-			userCommission = jdbcTemplate.queryForObject(sql, parameter, new UserCommissionMapper());
+			userCommission = (UserCommission) jdbcTemplate.queryForObject(sql, parameter, new UserCommissionMapper());
 		} catch (Exception ex) {
 			log.error(ex);
 		}
